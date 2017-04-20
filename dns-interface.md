@@ -1,16 +1,16 @@
-[toc]
+DNS Interface 定义
+=======================
 
-# DNS -interface 定义 (项目名称smart)
     http header:
         * context-type: application/json
         * accept: application/json
     http code:
-        200
-        404
-        204
-        400
+        * 200
+        * 404
+        * 204
+        * 400
     tips:
-        全部接口添加一个operator字段, 除了Task
+        全部接口添加一个operator字段, 除了Task, Apply
 
         <!-- 'task': -->
             <!-- task_type: secondary -->
@@ -26,6 +26,23 @@
              返回一个新的任务 -->
         <!-- 这个任务认为是父任务, (及时只有一个子任务，也需要调用apply接口)
             所有的任务都可以通过task接口去查询 -->
+
+#### Author: wei.zheng
+#### E-mail: monkeyerKong@gmail.com
+
+# 目录
+* [DnsRegion](#DnsRegion)
+* [RegionSummary](#RegionSummary)
+* [NameServerHost](#NameServerHost)
+* [NameServer](#NameServer)
+* [NameServerACL](#NameServerACL)
+* [View](#View)
+* [Zone](#Zone)
+* [Record](#Record)
+* [ACL](#ACL)
+* [AclRule](#AclRule)
+* [Apply](#Apply)
+* [Task](#Task)
 
 ## DnsRegion (基础信息类)
     note:
@@ -779,7 +796,7 @@
             http://endpoint:8774/applyacl/{acl_id}
             
 
-### ApplyAcl(行为类)
+### Apply(行为类)
     url: http://endpoint:8774/apply
     key field:
         acl_id:
